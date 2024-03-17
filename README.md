@@ -72,4 +72,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Tic-Tac-Toe
 This is a Tic-Tac-Toe Web game .
+Link to deploy the web application : https://inspiring-starlight-40d2a6.netlify.app/
 >>>>>>> f1ce46c348c69aa79fe3889e52f714be4190a3a6

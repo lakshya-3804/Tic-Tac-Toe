@@ -1,0 +1,11 @@
+
+.header{
+    background:linear-gradient(to left , #2A37AC , #7D0790);
+    margin:0px;
+}
+
+.header h1{
+    color: white;
+    margin: 0px;
+    padding:10px;
+}

@@ -1,0 +1,21 @@
+
+.winScreen{
+    background-color: antiquewhite;
+    font-size: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.reset{
+    padding: 10px;
+    background-color: rgb(20, 61, 82);  
+    color: white; 
+    margin: 5px;
+    font-weight: bold;  
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

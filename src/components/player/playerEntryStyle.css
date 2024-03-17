@@ -1,0 +1,29 @@
+
+.playNames{
+    color: white;
+    font-size: large;
+    padding: 10px;
+    /* margin: 10px; */
+    /* width: 20vw; */
+    flex-basis: 20%;
+}
+
+.playNames form > *{
+    margin: 10px;
+}
+
+.playNames input{
+    padding: 10px;
+}
+
+.playNames form{
+    text-align: center;
+}
+
+.playNames button{
+    background-color: rgb(56, 217, 105);
+    border: 1px solid white;
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+

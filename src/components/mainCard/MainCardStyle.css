@@ -1,0 +1,41 @@
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    padding: 10px;
+}
+
+.main > *{
+    flex-basis: 30%;
+}
+.gameBox{
+    flex-basis: 30%;
+    height: 20vw;
+    margin: auto;
+    /* margin-top: 10vh; */
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 235px;
+    min-height: 200px;
+}
+
+
+.gameBox button{
+    flex-basis:33.33%;
+    background-color: cadetblue;
+    font-size: large;
+    border: 1px solid black;
+    
+}
+
+.gameBox button:hover{
+    background-color: rgb(78, 168, 172);
+    
+}
+
+
+

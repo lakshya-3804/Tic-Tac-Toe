@@ -101,7 +101,7 @@ function MainCard(props) {
       <div className="resButtonDiv">
         <h3>{props.countX}</h3>
         <button onClick={resGame} className="resButton">
-          <img src="https://img.icons8.com/?size=100&id=bDkQlpOV2TWB&format=png&color=000000" />
+          <img src="https://img.icons8.com/?size=100&id=bDkQlpOV2TWB&format=png&color=000000" alt="reset"/>
         </button>
         <h3>{props.countO}</h3>
       </div>

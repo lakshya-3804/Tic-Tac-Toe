@@ -1,10 +1,6 @@
 import "./MainCardStyle.css";
-import PlayerEntry,{play1,play2} from "../player/PlayerEntry";
-import WinDisplay from "../screen/WinDisplay";
-import { useState } from "react";
 
-
-function MainCard() {
+function MainCard(props) {
   let move = "X";
   function mark(e) {
     if (e.target.innerHTML === "&nbsp;") {
@@ -15,25 +11,17 @@ function MainCard() {
       alert("Block already filled!!");
     }
     console.log(player.X)
-    if(play1!==''){
-        player.X=play1;
-    }
-    if(play2!==''){
-        player.O=play2;
-    }
+    
   }
 
     let player = {
-      X:  "player 1",
-      O:  "player 2",
+      X:  props.p1,
+      O:  props.p2,
     };
 
 
-  let [sc, setsc] = useState("Win the Game");
-
   function checkWin() {
     const Btns = document.querySelectorAll(".gameBox button");
-    let scr = "Win the Game";
     const winConditions = [
       [0, 1, 2],
       [3, 4, 5],
@@ -44,7 +32,7 @@ function MainCard() {
       [0, 4, 8],
       [2, 4, 6],
     ];
-
+    let flag=false;
     for(let i=0 ;i<winConditions.length; i++){
         const [a, b, c] = winConditions[i];
         if (
@@ -52,7 +40,10 @@ function MainCard() {
           Btns[a].innerHTML === Btns[b].innerHTML &&
           Btns[b].innerHTML === Btns[c].innerHTML
         ) {
-          scr = `${player[Btns[a].innerHTML]} wins`;
+          flag=true;
+          props.setwinner(`${player[Btns[a].innerHTML]} wins !!`);
+          if(Btns[a].innerHTML==='X') props.setcX(props.countX+1);
+          else props.setcO(props.countO+1);
           Btns[a].style.fontSize='xx-large';
           Btns[a].style.fontWeight='bold';
           Btns[b].style.fontSize='xx-large';
@@ -64,8 +55,15 @@ function MainCard() {
           break;
         }
     }
-
-    setsc(scr);
+    if(!flag){
+      for(let i=0; i<Btns.length; i++){
+        if(Btns[i].innerHTML==='&nbsp;'){
+          return;
+        }
+      }
+      props.setwinner('Match Draw !!');
+      disable();
+    }
   }
 
   function disable(){
@@ -80,8 +78,8 @@ function MainCard() {
         btn.removeAttribute('disabled');
         btn.style.fontSize='large';
         btn.style.fontWeight='normal'
-        setsc("Win the Game")
     })
+    props.setwinner('');
 }
 
   
@@ -89,7 +87,6 @@ function MainCard() {
   return (
     <>
     <div className="main">
-      <PlayerEntry />
       <div className="gameBox">
         <button onClick={mark}>&nbsp;</button>
         <button onClick={mark}>&nbsp;</button>
@@ -101,7 +98,16 @@ function MainCard() {
         <button onClick={mark}>&nbsp;</button>
         <button onClick={mark}>&nbsp;</button>
       </div>
-      <WinDisplay textCont={sc} res={resGame} id="#go"/>
+      <div className="resButtonDiv">
+        <h3>{props.countX}</h3>
+        <button onClick={resGame} className="resButton">
+          <img src="https://img.icons8.com/?size=100&id=bDkQlpOV2TWB&format=png&color=000000" />
+        </button>
+        <h3>{props.countO}</h3>
+      </div>
+      <div className="resButtonDiv">
+        <button onClick={()=>{props.setcO(0);props.setcX(0)}} style={{'width':'100px ', 'margin':'0px', 'backgroundColor':'teal' , 'color':'white'}}>Reset Counter</button>
+      </div>
     </div>
     </>
   );

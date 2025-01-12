@@ -1,21 +1,25 @@
 
 .winScreen{
-    background-color: antiquewhite;
-    font-size: 100%;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.winScreen > h1{
+    background-color: rgb(60, 194, 231);
     text-align: center;
-    flex-basis: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 10px;
+    width: 30%;
+    min-width: 200px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px 0px;
 }
 
 .reset{
-    padding: 10px;
-    background-color: rgb(20, 61, 82);  
-    color: white; 
-    margin: 5px;
-    font-weight: bold;  
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border:0px;
+    background-color: antiquewhite;
+}
+
+.reset img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
